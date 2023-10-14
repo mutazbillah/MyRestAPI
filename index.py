@@ -3,6 +3,7 @@
 import json
 from flask import Flask, request, jsonify
 from data import Deployment
+import os
 
 
 app = Flask(__name__)
@@ -32,5 +33,5 @@ def process_request():
 
 
 
-if __name__ == '__main__':
-    app.run(debug=False,host='0.0.0.0')
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
