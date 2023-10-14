@@ -1,0 +1,43 @@
+# Python-specific ignore
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+*.log
+
+# Virtual environment (if you're using virtualenv or venv)
+venv/
+env/
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Editor-specific files
+*.swp
+*.swo
+
+# Application-specific files and directories (customize this as needed)
+instance/
+__init__.py
+config.py
+
+# Ignore database files (if you're using SQLite)
+*.db
+
+# Ignore compiled JavaScript and CSS files (if applicable)
+*.min.js
+*.min.css
+
+# Ignore secret keys and configuration files (add more if needed)
+*.env
+*.cfg
+
+# Ignore any sensitive or generated files
+secrets/
+*.key
+
+# Ignore static files uploaded by users (customize this as needed)
+uploads/
