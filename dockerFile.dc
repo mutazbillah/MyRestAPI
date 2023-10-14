@@ -1,0 +1,23 @@
+# Verwende das offizielle Python-Image als Basisimage
+FROM python:3.8-slim
+
+# Setze das Arbeitsverzeichnis innerhalb des Containers
+WORKDIR /app
+
+# Kopiere die Abhängigkeiten (requirements.txt) in das Arbeitsverzeichnis
+COPY requirements.txt /app/
+
+# Installiere die Python-Abhängigkeiten
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Kopiere den gesamten aktuellen Verzeichnisinhalt in das Arbeitsverzeichnis des Containers
+COPY . /app/
+
+# Setze die Umgebungsvariable für Flask
+ENV FLASK_APP=app.py
+
+# Öffne den Port 5000 für eingehende Anfragen
+EXPOSE 5000
+
+# Starte die Flask-Anwendung, wenn der Container gestartet wird
+CMD ["flask", "run", "--host=0.0.0.0"]
